@@ -4,8 +4,8 @@ import (
 	"bank/pkg/bank/types"
 )
 
-//PaymentSource uses for sources from cards
-func PaymentSource(cards types.Card) types.PaymentSource {
+//PaymentSources uses for sources from cards
+func PaymentSources(cards types.Card) types.PaymentSource {
 	var PaymntSourc types.PaymentSource
 	if cards.Active && cards.Balance > 0 {
 		PaymntSourc.Number = cards.PAN
