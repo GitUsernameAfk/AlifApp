@@ -5,12 +5,14 @@ import (
 )
 
 //PaymentSources uses for sources from cards
-func PaymentSources(cards types.Card) types.PaymentSource {
+func PaymentSources(cards []types.Card) types.PaymentSource {
 	var PaymntSourc types.PaymentSource
-	if cards.Active && cards.Balance > 0 {
-		PaymntSourc.Number = cards.PAN
-		PaymntSourc.Balance = cards.Balance
-		PaymntSourc.Type = cards.Name
+	for _, card := range cards {
+	if card.Active && card.Balance > 0 {
+		PaymntSourc.Number = card.PAN
+		PaymntSourc.Balance = card.Balance
+		PaymntSourc.Type = card.Name
+	}
 	}
 	return PaymntSourc
 }
