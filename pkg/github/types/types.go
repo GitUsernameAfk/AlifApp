@@ -34,9 +34,9 @@ type Payment struct {
 	Amount  Money
 }
 
-//PaymentSource is struct type fot sources from card 
-type PaymentSource struct {
+//PaymntSource is struct type fot sources from card 
+type PaymntSource struct {
 	Type 		string
-	Number 		string
+	Number 		PAN
 	Balance		Money
 }
