@@ -1,18 +1,18 @@
-package payment
+package card
 
 import (
-	"fmt"
 	"bank/pkg/bank/types"
+	"fmt"
 )
 
-func ExamplePaymntS() {
+func ExamplePaymentSource() {
 	card := types.Card{
 		Active:  true,
 		Balance: 20_000_00,
 		Name:    "InfinityWarSpecial",
 		PAN:     "xxx-xxx-xxx-512",
 	}
-	PaymntSourc := PaymntS(card)
+	PaymntSourc := PaymentSource(card)
 	fmt.Println(PaymntSourc)
 	//Output: {InfinityWarSpecial xxx-xxx-xxx-512 2000000}
 }
