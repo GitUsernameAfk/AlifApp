@@ -1,7 +1,7 @@
 package payment
 
 import (
-	"bank/pkg/github/types"
+	"bank/pkg/bank/types"
 )
 
 //PaymntS uses for sources from cards

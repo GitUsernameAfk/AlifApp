@@ -2,10 +2,11 @@ package payment
 
 import (
 	"fmt"
+	"bank/pkg/bank/types"
 )
 
 func ExamplePaymntS() {
-	card := Card{
+	card := types.Card{
 		Active:  true,
 		Balance: 20_000_00,
 		Name:    "InfinityWarSpecial",
