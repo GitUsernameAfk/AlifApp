@@ -21,12 +21,12 @@ func ExamplePaymentSources() {
 		},
 		{
 			Active:  true,
-			Balance: 0_00,
+			Balance: 10_00,
 			Name:    "VISA",
 			PAN:     "xxx-xxx-xxx-978",
 		},
 	}
-	payment:=PaymentSources(cards)
+	payment := PaymentSources(cards)
 	fmt.Println(payment)
-	//Output: {InfinityWarSpecial xxx-xxx-xxx-512 2000000}
+	//Output: [{InfinityWarSpecial xxx-xxx-xxx-512 2000000} {VISA xxx-xxx-xxx-978 1000}]
 }

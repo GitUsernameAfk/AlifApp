@@ -5,14 +5,19 @@ import (
 )
 
 //PaymentSources uses for sources from cards
-func PaymentSources(cards []types.Card) types.PaymentSource {
-	var PaymntSourc types.PaymentSource
+func PaymentSources(cards []types.Card) []types.PaymentSource {
+	var PaymntSources []types.PaymentSource
 	for _, card := range cards {
-	if card.Active && card.Balance > 0 {
-		PaymntSourc.Number = card.PAN
-		PaymntSourc.Balance = card.Balance
-		PaymntSourc.Type = card.Name
+
+		if card.Active && card.Balance > 0 {
+			PaymntSources = append(PaymntSources, 
+				types.PaymentSource {
+					Number:		card.PAN,
+					Balance:	card.Balance,
+					Type:		card.Name,
+				} )
+		}
 	}
-	}
-	return PaymntSourc
+	return PaymntSources
 }
+
